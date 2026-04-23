@@ -18,6 +18,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -49,7 +53,9 @@ a {
     padding: 10px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
+section {
+    scroll-margin-top: 80px;
+}
 .navbar-brand {
     font-size: 28px;
     color: var(--primary) !important;
@@ -93,12 +99,12 @@ a {
     background: linear-gradient(135deg, #ff5fa2 0%, #6c63ff 100%);
     color: var(--white);
     position: relative;
+    z-index: 1;
     overflow: hidden;
 }
 
 .hero-section::before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -180,10 +186,12 @@ a {
 .social-icons {
     display: flex;
     gap: 20px;
+    
 }
 
 .social-icon {
     display: inline-flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     width: 45px;
@@ -199,6 +207,10 @@ a {
     background: var(--white);
     color: var(--primary);
     transform: translateY(-5px);
+}
+.social-icons a {
+    position: relative;
+    z-index: 2;
 }
 
 /* SECTION STYLES */
